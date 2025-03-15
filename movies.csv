@@ -1,0 +1,101 @@
+movie_id,title,genre,release_year
+1,The Shawshank Redemption,Drama,1999
+2,The Godfather,Drama,1987
+3,The Dark Knight,Drama,1993
+4,Schindler's List,Crime,2002
+5,Pulp Fiction,Action,1980
+6,The Lord of the Rings: The Return of the King,Crime,2010
+7,Forrest Gump,Biography,2004
+8,Inception,Biography,2014
+9,Fight Club,Crime,1987
+10,The Matrix,Biography,2018
+11,Goodfellas,Crime,2011
+12,The Empire Strikes Back,Sci-Fi,2016
+13,City of God,Biography,1986
+14,The Silence of the Lambs,Drama,2004
+15,Se7en,Sci-Fi,2023
+16,It's a Wonderful Life,Sci-Fi,2021
+17,The Usual Suspects,Crime,2001
+18,Saving Private Ryan,Drama,2004
+19,Spirited Away,Drama,1986
+20,Interstellar,Fantasy,2021
+21,Parasite,Drama,2000
+22,The Green Mile,Crime,1981
+23,Léon: The Professional,Fantasy,2023
+24,Hara-Kiri,Crime,1991
+25,The Pianist,Fantasy,1986
+26,Terminator 2: Judgment Day,Biography,2004
+27,Back to the Future,Crime,2001
+28,The Lion King,Crime,1985
+29,Gladiator,Sci-Fi,1996
+30,The Departed,Biography,1982
+31,Whiplash,Sci-Fi,2017
+32,The Prestige,Action,1980
+33,The Intouchables,Crime,2012
+34,Joker,Crime,2001
+35,Avengers: Infinity War,Fantasy,1998
+36,The Dark Knight Rises,Biography,2014
+37,Oldboy,Sci-Fi,2010
+38,Alien,Crime,2001
+39,Once Upon a Time in the West,Biography,1985
+40,Cinema Paradiso,Fantasy,2005
+41,Grave of the Fireflies,Sci-Fi,1983
+42,Aliens,Fantasy,1996
+43,American Beauty,Biography,2021
+44,Braveheart,Fantasy,1986
+45,Toy Story,Crime,2020
+46,Coco,Fantasy,1991
+47,Your Name,Drama,1986
+48,Capernaum,Sci-Fi,1990
+49,Django Unchained,Drama,2008
+50,3 Idiots,Fantasy,1980
+51,Taare Zameen Par,Drama,2010
+52,WALL-E,Biography,2019
+53,Inglourious Basterds,Crime,1991
+54,The Hunt,Drama,2019
+55,Memento,Drama,2019
+56,The Great Dictator,Biography,1991
+57,The Lives of Others,Crime,2011
+58,Paths of Glory,Drama,1990
+59,Amélie,Biography,1999
+60,A Clockwork Orange,Fantasy,1980
+61,Lawrence of Arabia,Biography,2006
+62,Vertigo,Drama,1988
+63,North by Northwest,Crime,1996
+64,Psycho,Action,1985
+65,Citizen Kane,Drama,2014
+66,Rear Window,Drama,2023
+67,City Lights,Drama,2016
+68,Casablanca,Drama,2019
+69,Modern Times,Crime,1981
+70,Sunset Blvd.,Crime,1994
+71,The Shining,Sci-Fi,2015
+72,Apocalypse Now,Biography,1981
+73,Full Metal Jacket,Sci-Fi,2011
+74,The Truman Show,Biography,2022
+75,Eternal Sunshine of the Spotless Mind,Biography,2004
+76,Requiem for a Dream,Fantasy,2019
+77,American History X,Crime,1983
+78,Reservoir Dogs,Fantasy,2019
+79,Taxi Driver,Drama,2019
+80,A Beautiful Mind,Fantasy,2001
+81,The Grand Budapest Hotel,Fantasy,1983
+82,Gone Girl,Fantasy,2011
+83,Blade Runner,Drama,2018
+84,Scarface,Biography,2020
+85,Jaws,Sci-Fi,1992
+86,Rocky,Crime,2022
+87,Raging Bull,Drama,1984
+88,Heat,Fantasy,2004
+89,The Wolf of Wall Street,Crime,2006
+90,Mad Max: Fury Road,Action,2018
+91,The Revenant,Action,1984
+92,The Big Lebowski,Drama,1985
+93,Shutter Island,Action,2006
+94,La La Land,Action,2006
+95,Whale Rider,Action,1988
+96,The Sixth Sense,Drama,1999
+97,The Social Network,Crime,2001
+98,Slumdog Millionaire,Drama,1994
+99,Life of Pi,Action,2017
+100,The Aviator,Sci-Fi,2004
