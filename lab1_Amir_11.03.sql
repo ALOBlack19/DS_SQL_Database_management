@@ -183,4 +183,16 @@ WHERE
 ORDER BY
 	release_year ASC
 
+-- Question 21
+
+SELECT
+	* 
+FROM
+	movies
+
+
+
+
+	
+
 
