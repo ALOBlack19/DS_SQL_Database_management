@@ -2,7 +2,7 @@
 SELECT
 	*
 FROM
-	employees
+	departments
 /*
 1. INNER JOIN
 Select employee names, salaries, and their respective department names.
@@ -36,7 +36,8 @@ FROM
 
 -- ANOTHER WAY OF DOING THAT
 SELECT
-	e.first_name, COALESCE(department_name, 'Unassigned')
+	e.first_name, 
+	COALESCE(department_name, 'Unassigned')
 FROM
 	employees AS e	LEFT JOIN	departments AS d
 	ON
@@ -94,43 +95,66 @@ Using a self join, write a query to display each employee along with their
 manager's name. For employees without a manager, display 'No Manager'.
 */
 
-
+-- FINDING THE MANAGERS MATCHING TO THE MANAGER_ID(TABLE 1) WITH EMPLOYEE_ID (TABLE 2)
 SELECT
-	e2.employee_id, e1.manager_id
+	e1.employee_id AS employee, e2.employee_id AS manager
 FROM
 	employees AS e1 INNER JOIN employees AS e2
-	ON e1.department_id = e2.department_id
-WHERE
-	e1.manager_id = e2.employee_id
+	ON e1.employee_id = e2.manager_id;
+	
+-- DISPLAYING EACH EMPLOYEE ALONG WITH THEIR MANAGER'S NAME
 
-
-
+SELECT
+	e1.employee_id,
+	e1.first_name AS employee,
+	e1.last_name,
+	e2.employee_id,
+	COALESCE(e2.first_name, 'No manager') AS manager,
+	e2.last_name
+FROM
+	employees AS e1
+	LEFT JOIN
+	employees AS e2
+	ON
+	e1.employee_id = e2.manager_id
+ORDER BY
+	manager, e2.last_name;
 /*
 7. INNER JOIN with Condition
 Select employees whose salary is above the average salary of their
 department.
 */
 
-SELECT
-FROM
-	employees AS e
-	INNER JOIN
-	departments AS d
-ON
-	e.department_id = d.department_id
+SELECT 
+    e1.employee_id,
+    e1.first_name,
+    e1.last_name,
+    e1.salary,
+    d.department_name
+FROM employees AS e1
+INNER JOIN employees AS e2
+    ON e1.department_id = e2.department_id
+INNER JOIN departments AS d
+    ON e1.department_id = d.department_id
+GROUP BY e1.employee_id, e1.first_name, e1.last_name, e1.salary, d.department_name
+HAVING e1.salary > AVG(e2.salary)
+ORDER BY d.department_name, e1.salary DESC;
+	
 /*
 8. LEFT JOIN with Aggregation
 Calculate the average salary for each department. Include departments
 with no employees, showing a count of 0 and an average salary as 'NULL'.
 */
 
-SELECT
-FROM
-	employees AS e
-	LEFT JOIN
-	departments AS d
-ON
-	e.department_id = d.department_id
+SELECT 
+    d.department_name,
+    COUNT(e.employee_id) AS employee_count,
+    ROUND(AVG(e.salary),2) AS avg_salary
+FROM departments AS d
+LEFT JOIN employees AS e
+    ON d.department_id = e.department_id
+GROUP BY d.department_name
+ORDER BY d.department_name;
 
 /*
 9. RIGHT JOIN with Aggregation
@@ -139,13 +163,14 @@ departments with no employees. Sort by the number of employees in
 descending order.
 */
 
-SELECT
-FROM
-	employees AS e
-	RIGHT JOIN
-	departments AS d
-ON
-	e.department_id = d.department_id
+SELECT 
+    d.department_name,
+    COUNT(e.employee_id) AS employee_count
+FROM employees AS e
+RIGHT JOIN departments AS d
+    ON e.department_id = d.department_id
+GROUP BY d.department_name
+ORDER BY employee_count DESC;
 
 /*
 10. FULL OUTER JOIN with Advanced Conditions
@@ -154,10 +179,10 @@ employees without departments and departments without employees.
 Display a meaningful placeholder for missing data.
 */
 
-SELECT
-FROM
-	employees AS e
-	FULL OUTER JOIN
-	departments AS d
-ON
-	e.department_id = d.department_id
+SELECT 
+    COALESCE(e.first_name || ' ' || e.last_name, 'No Employee') AS employee_name,
+    COALESCE(d.department_name, 'No Department') AS department_name
+FROM employees AS e
+FULL OUTER JOIN departments AS d
+    ON e.department_id = d.department_id
+ORDER BY department_name, employee_name;
