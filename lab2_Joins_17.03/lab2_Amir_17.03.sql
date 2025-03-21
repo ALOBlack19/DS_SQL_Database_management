@@ -50,11 +50,14 @@ departments that have no employees.
 */
 
 SELECT
-	d.department_name, e.first_name
+	d.department_name,
+	e.first_name
 FROM
 	employees AS e 	RIGHT JOIN	departments AS d
 	ON
 	e.department_id = d.department_id
+WHERE
+	d.department_name IS NOT NULL
 ORDER BY
 	d.department_name;
 
